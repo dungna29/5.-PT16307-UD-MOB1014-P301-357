@@ -9,7 +9,7 @@ package BAI1_Lam_Quen_Voi_Java;
  *
  * @author Dungna29
  */
-public class S1_ChuongTrinhDauTien {
+public class B1_ChuongTrinhDauTien {
     // 2 Cách gọi hàm main
     // C1. Ctrl + Space gõ main
     // C2. psvm + tab

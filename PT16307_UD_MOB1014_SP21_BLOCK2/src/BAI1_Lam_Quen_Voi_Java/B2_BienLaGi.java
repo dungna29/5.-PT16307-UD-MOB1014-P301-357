@@ -9,7 +9,7 @@ package BAI1_Lam_Quen_Voi_Java;
  *
  * @author Dungna29
  */
-public class S2_BienLaGi {
+public class B2_BienLaGi {
 
     /*
         Bài 2: Khái niệm về biến và khai báo biến
