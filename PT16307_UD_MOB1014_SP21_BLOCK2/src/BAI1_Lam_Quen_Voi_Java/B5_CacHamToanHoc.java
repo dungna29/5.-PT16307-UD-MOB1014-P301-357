@@ -5,6 +5,8 @@
  */
 package BAI1_Lam_Quen_Voi_Java;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Nguyen Anh Dung
@@ -38,14 +40,27 @@ public class B5_CacHamToanHoc {
         //người dùng nhập vào 2 số và chỉ ra số nào lớn nhất hoặc nhỏ nhất         
     
         //Khai báo 2 biến a và b có khởi tạo giá trị ban đầu.
-        double a = 7.4, b = 7.7;
+        //double a = 7.4, b = 7.7;
         // Sử dụng hàm toán học Math Min để tìm ra số nhỏ nhất trong 2 số a và b trên.
-        System.out.println("Số lớn nhất là:" + Math.min(a, b));
+        //System.out.println("Số lớn nhất là:" + Math.min(a, b));
         // Sử dụng hàm toán học Math Round để làm tròn số a
-        System.out.println(Math.round(a));        
+        //System.out.println(Math.round(a));        
         
         //Các hàm còn lại các bạn tự lấy ví dụ cho bản thân để nhớ.
-        
+         Scanner sc = new Scanner(System.in);
+        int number, pow, temp = 0, kq;
+        System.out.println("Mời mời bạn nhập số: ");
+        number = Integer.parseInt(sc.nextLine());
+        System.out.println("Mời mời bạn nhập số mũ: ");
+        pow = Integer.parseInt(sc.nextLine());
+        kq = 1;
+        do {
+            kq = kq * number;
+
+            temp++;
+        } while (temp < pow);
+        System.out.println(kq);
+        System.out.println(Math.pow(number, pow));
         
     }
 
