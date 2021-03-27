@@ -5,19 +5,23 @@
  */
 package BAI4_Array_ArrayList_List;
 
+import java.util.Scanner;
+import javax.sound.midi.SysexMessage;
+
 /**
  *
  * @author Dungna29
  */
 public class BaiTAP_LAB1_LAB2 {
-     /*
+
+    /*
          * Bài tập ôn tập tổng hợp:
          * Viết 1 chương trình có menu sử dụng switch case và vòng lặp:
          *         ------Chương trình 1-------
          *       1. In bảng cửu chương đơn
          *       2. In bảng cửu theo khoảng
          *       3. Kiểm tra học lực Sinh Viên Poly
-         *       4. Nhập thông tin người yêu
+         *       4. Nhập thông tin người yêu cũ
          *       5. Thoát.
          
          * Giải thích:
@@ -44,5 +48,50 @@ public class BaiTAP_LAB1_LAB2 {
         - Clean Code + || - 1 ĐIỂM
         - Áp dụng được kiến thức của đầu bài đưa ra + || - 1 Điểm
         - Copy bài có sẵn hoặc copy code ở bài cũ vào mặc định 0 điểm.
-         */
+     */
+    static String input, input1;
+    static String[] arrTen;
+    static int[] arrNs;
+    static Scanner sc = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        //Bước 1:
+        while (true) {
+            //Bước 2:
+            System.out.println("1. Nhập tt");
+            System.out.println("2. Xuất tt");
+            System.out.println("Mời bạn chọn chức năng: ");
+            input = sc.nextLine();
+            switch (input) {
+                case "1":
+                    them();
+                    break;
+                case "2":
+                    xuat();
+                    break;
+                default:
+                    System.out.println("CN không tồn tại");
+            }
+        }
+    }
+
+    static void them() {
+        System.out.println("Bạn muốn nhập bao nhiêu? :");
+        input1 = sc.nextLine();
+        arrTen = new String[Integer.parseInt(input1)];
+        arrNs = new int[Integer.parseInt(input1)];
+        for (int i = 0; i < Integer.parseInt(input1); i++) {
+            System.out.println("Mời bạn nhập tên: ");
+            arrTen[i] = sc.nextLine();
+            System.out.println("Mời bạn nhập năm sinh: ");
+            arrNs[i] = Integer.parseInt(sc.nextLine());
+        }
+    }
+
+    static void xuat() {
+        for (int i = 0; i < arrTen.length; i++) {
+            System.out.println(arrTen[i] + " " + arrNs[i]);
+        }
+    }
 }
