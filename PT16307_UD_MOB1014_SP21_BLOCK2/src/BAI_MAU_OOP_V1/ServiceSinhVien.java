@@ -5,6 +5,8 @@
  */
 package BAI_MAU_OOP_V1;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -14,8 +16,12 @@ import java.util.Scanner;
 public class ServiceSinhVien {//Đây là nơi sẽ code các chức năng liên quan của Sinh Viên
 
     Scanner _sc = new Scanner(System.in);
+    SinhVien[] _arrSinhViens;
+    List<SinhVien> _lstSinhVien;
+    SinhVien _sv;
 
     public ServiceSinhVien() {
+        _lstSinhVien = new ArrayList<>();
     }
 
     //Bài 1: Tạo 2 đối tượng sử dụng contructor có và không tham số
@@ -51,26 +57,79 @@ public class ServiceSinhVien {//Đây là nơi sẽ code các chức năng liên
     //Bài 3: Tạo nhiều đối tượng sử Array
     void bai3Tao1ArrayDoiTuong() {
         int size;
-        SinhVien[] arrSinhViens;//Khai báo
+
         System.out.println("Bạn muốn thêm bao nhiêu SV: ");
         size = Integer.parseInt(_sc.nextLine());//Kích thước mảng là do người dùng nhập
         //Sau khi người dùng nhập thì mới khởi tạo
-        arrSinhViens = new SinhVien[size];//Khởi tạo mảng sinh viên với kích thước do người dùng nhập vào
-        for (int i = 0; i < arrSinhViens.length; i++) {
-            arrSinhViens[i] = new SinhVien();
+        _arrSinhViens = new SinhVien[size];//Khởi tạo mảng sinh viên với kích thước do người dùng nhập vào
+        for (int i = 0; i < _arrSinhViens.length; i++) {
+            _arrSinhViens[i] = new SinhVien();
             System.out.println("Mời bạn nhập Tên: ");
-            arrSinhViens[i].setTen(_sc.nextLine());
+            _arrSinhViens[i].setTen(_sc.nextLine());
             System.out.println("Mời bạn nhập Mã: ");
-            arrSinhViens[i].setMsv(_sc.nextLine());
+            _arrSinhViens[i].setMsv(_sc.nextLine());
             System.out.println("Mời bạn nhập Năm Sinh: ");
-            arrSinhViens[i].setNs(Integer.parseInt(_sc.nextLine()));
+            _arrSinhViens[i].setNs(Integer.parseInt(_sc.nextLine()));
             System.out.println("Mời bạn nhập Điểm JAVA: ");
-            arrSinhViens[i].setDiemJava(Double.parseDouble(_sc.nextLine()));
+            _arrSinhViens[i].setDiemJava(Double.parseDouble(_sc.nextLine()));
         }
         //arrSinhViens[i] Đối tượng sinh viên nằm ở index
-        for (SinhVien x : arrSinhViens) {
+    }
+
+    void inMangSV() {
+        if (_arrSinhViens.length < 0) {
+            return;
+        }
+        for (SinhVien x : _arrSinhViens) {
             //x là tên biến đại diện cho đối tượng SinhVien
             x.inRaManHinh();
         }
     }
+
+    //Bài 4: List đối tượng
+    void bai4ListSinhVien() {
+        /*
+        _lstSinhVien: Biến toàn cục được khai báo trên đầu dùng chung
+        _sv: Biến toàn cục được khai báo trên đầu để dùng chung
+        */
+        int size;
+        System.out.println("Bạn muốn thêm bao nhiêu SV: ");
+        size = Integer.parseInt(_sc.nextLine());
+        for (int i = 0; i < size; i++) {
+            _sv = new SinhVien();
+            System.out.println("Mời bạn nhập Tên: ");
+            _sv.setTen(_sc.nextLine());
+            System.out.println("Mời bạn nhập Mã: ");
+            _sv.setMsv(_sc.nextLine());
+            System.out.println("Mời bạn nhập Năm Sinh: ");
+            _sv.setNs(Integer.parseInt(_sc.nextLine()));
+            System.out.println("Mời bạn nhập Điểm JAVA: ");
+            _sv.setDiemJava(Double.parseDouble(_sc.nextLine()));
+            _lstSinhVien.add(_sv);//Sau khi nhập xong 1 đối tượng tiến hành add vào danh sách
+        }
+    }
+     void bai4ListSinhVien1() {        
+        int size;        
+        size = Integer.parseInt(getValueInput("thêm bao nhiêu SV:"));
+        for (int i = 0; i < size; i++) {
+            _sv = new SinhVien();            
+            _sv.setTen(getValueInput("tên Sinh Viên:"));          
+            _sv.setMsv(getValueInput("tên Sinh mã:"));            
+            _sv.setNs(Integer.parseInt(getValueInput("năm sinh:")));           
+            _sv.setDiemJava(Double.parseDouble(getValueInput("điểm:")));
+            _lstSinhVien.add(_sv);//Sau khi nhập xong 1 đối tượng tiến hành add vào danh sách
+        }
+    }
+    String getValueInput(String text){
+         System.out.println("Mời bạn " + text);
+         return _sc.nextLine();
+    }
+    
+    void getListSV() {      
+        for (SinhVien x : _lstSinhVien) {
+            //x là tên biến đại diện cho đối tượng SinhVien
+            x.inRaManHinh();
+        }
+    }
+
 }

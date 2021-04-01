@@ -12,6 +12,7 @@ package BAI_MAU_OOP_V1;
 public class Main {//Chỉ có Menu và Switch case ở đây
     public static void main(String[] args) {
         ServiceSinhVien svSinhVien = new ServiceSinhVien();
-        svSinhVien.bai1TaoDoiTuongBangConTructor();
+        svSinhVien.bai3Tao1ArrayDoiTuong();
+        svSinhVien.inMangSV();
     }
 }
