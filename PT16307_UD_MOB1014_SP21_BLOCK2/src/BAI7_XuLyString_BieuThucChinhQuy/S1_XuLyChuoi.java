@@ -12,7 +12,7 @@ package BAI7_XuLyString_BieuThucChinhQuy;
 public class S1_XuLyChuoi {
 
     public static void main(String[] args) {
-        // Ký tự đặc biệt \t = tab  \r = về đầu dòng  \n xuống dòng \\ = \  \" = "
+        // Ký tự đặc biệt \t = t\tab  \r = về đầu dòng  \n xuống dòng \\ = \  \" = "
         System.out.print("\t+ Họ và tên: Kiên\r\n\t+ Tuổi: 19");
         System.out.println("");
 
@@ -25,7 +25,7 @@ public class S1_XuLyChuoi {
         //trim() được sử dụng để xóa khoảng trẳng ở đầu và cuối chuỗi. 
         System.out.println(name + "JAVA1");
         System.out.println(name.trim() + "JAVA1");
-        //length() Đo độ dài của chuôix
+        //length() Đo độ dài của chuỗi
         System.out.println(name.length());
         //substring()trả về chuỗi con của một chuỗi.
         String name2 = "JAVA1FPT";
