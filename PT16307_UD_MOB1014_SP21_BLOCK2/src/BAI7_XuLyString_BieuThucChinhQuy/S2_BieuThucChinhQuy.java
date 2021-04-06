@@ -9,6 +9,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 /**
  *
  * @author Nguyen Anh Dung
@@ -24,19 +25,20 @@ public class S2_BieuThucChinhQuy {
             System.out.println("Mời bạn nhập chữ: ");
             input = sc.nextLine();
         } while (!checkChu(input));
-        System.out.println("Bạn thông minh quá nhập đúng chữ rồi");
+        //System.out.println("Bạn thông minh quá nhập đúng chữ rồi");
+    }
+    //Chỉ sử dụng với kiểu dữ liệu truyền vào là String.
+    static boolean checkChu(String text){
+        Pattern pattern = Pattern.compile("[a-zA-Z]+");
+        Matcher matcher =  pattern.matcher(text);
+        return  matcher.matches();//Trả về true khi đúng là chữ cái
+    }
+     static boolean checkSo(String text){
+        Pattern pattern = Pattern.compile("\\d+");
+        Matcher matcher =  pattern.matcher(text);
+        return  matcher.matches();//Trả về true khi đúng là chữ cái
     }
 
-    //Biểu thức chính quy chỉ xử lý chuỗi
-    static boolean checkSo(String text) {
-        Pattern pattern = Pattern.compile("\\d+");
-        Matcher matcher = pattern.matcher(text);
-        return matcher.matches();//Nếu là số thì sẽ return true
-    }
-    static boolean checkChu(String text) {
-        Pattern pattern = Pattern.compile("[a-zA-Z]+");
-        Matcher matcher = pattern.matcher(text);
-        return matcher.matches();//Nếu là số thì sẽ return true
-    }
+  
 
 }
