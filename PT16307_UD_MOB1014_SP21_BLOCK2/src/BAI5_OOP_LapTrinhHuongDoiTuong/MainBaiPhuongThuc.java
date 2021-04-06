@@ -36,6 +36,14 @@ public class MainBaiPhuongThuc {
         */
         B3_Method_HamTraVe b3 = new B3_Method_HamTraVe();
         //b3.tinhTong();//Không thể in ra màn hình vì phương thức là 1 giá trị
-        System.out.println(b3.tinhTong());
+        //System.out.println(b3.tinhTong());
+        
+        //Sử dụng phương thức có kiểu là 1 mảng
+        for (String x : b3.getYears()) {
+            System.out.println(x);
+        }
+        
+        //Sử dụng phương thức có kiểu là 1 đối tượng
+        b3.getSV().inThongTinSinhVien();
     }
 }
