@@ -17,7 +17,6 @@ import java.util.regex.Pattern;
 public class S2_BieuThucChinhQuy {
 
     public static void main(String[] args) {
-
         //Viết chương trình bắt nhập số nguyên
         Scanner sc = new Scanner(System.in);
         String input;
@@ -27,6 +26,7 @@ public class S2_BieuThucChinhQuy {
         } while (!checkChu(input));
         //System.out.println("Bạn thông minh quá nhập đúng chữ rồi");
     }
+    
     //Chỉ sử dụng với kiểu dữ liệu truyền vào là String.
     static boolean checkChu(String text){
         Pattern pattern = Pattern.compile("[a-zA-Z]+");
